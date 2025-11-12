@@ -1,4 +1,5 @@
 
+import Homework09 from "homeworks/Homework09/Homework09";
 import GlobalStyles from "./styles/GlobalStyles";
 
 // Импорты лекций
@@ -6,9 +7,10 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
 // import Lesson08 from "lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
-import Lesson10 from "lessons/Lesson10/Lesson10";
+// import Lesson10 from "lessons/Lesson10/Lesson10";
 // Импорты домашних работ
 // import Homework07 from "homeworks/Homework07/Homework07";
+
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
 
       {/* Лекция 9 - Styling components, control components */}
       {/* <Lesson09 /> */}
-      <Lesson10 />
+      {/* <Lesson10 /> */}
+      <Homework09 />
     </>
   );
 }

@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes, } from "react-router-dom";
 
 import GlobalStyles from "styles/GlobalStyles";
 import Layout from "components/Layout/Layout";
-import Home from "components/pages/About/Home/Home";
-import About from "components/pages/About/About";
-import Users from "components/pages/Users/Users";
-import User from "components/pages/Users/components/User/User";
+import type {  RoutePage } from "routes/types";
+import { v4 } from "uuid";
+import { routesData } from "routes/routes";
+
 
 
 
@@ -24,17 +24,16 @@ import User from "components/pages/Users/components/User/User";
 // import Homework12 from "homeworks/Homework12/Homework12";
 
 function App() {
+  const routes = routesData.map(({path, element}: RoutePage) => {
+    return <Route key={v4()} path={path} element={element} />
+  })
   return (
     <BrowserRouter>
       <GlobalStyles />
       <Layout>
         {/* Routes - собирает все маршруты приложение */}
         <Routes>
-          {/* Route - компонент, в который передаётся маршрут и контент */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/user" element={<User />} />
+          {routes}
         </Routes>
       </Layout>
 
